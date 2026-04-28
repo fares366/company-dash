@@ -1,0 +1,107 @@
+.statGrid { margin-bottom: 20px; }
+
+.statCard {
+  border-radius: 14px;
+  padding: 20px;
+  animation: dashFadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.statCard:hover { transform: translateY(-3px); box-shadow: var(--shadow-teal); }
+
+.statCardLabel {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.statCardValue {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+.statCardSub {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+.sectionSub {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 18px;
+}
+
+.skillRow { margin-bottom: 14px; }
+.skillRow:last-child { margin-bottom: 0; }
+.skillMeta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.skillName {
+  font-size: 13.5px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.skillPct {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.historyItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: border-color var(--transition), transform var(--transition);
+}
+.historyItem:hover { border-color: var(--teal-mid); transform: translateY(-2px); }
+.historyItem:last-child { margin-bottom: 0; }
+.historyInfo { flex: 1; min-width: 0; }
+.historyTitle  { font-size: 13px; font-weight: 600; margin-bottom: 2px; letter-spacing: -0.005em; }
+.historyMeta   { font-family: var(--font-ui); font-size: 12px; color: var(--muted); }
+.historyScore  {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--teal);
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 900px) {
+  .bottomGrid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .historyItem { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .historyScore { font-size: 18px; align-self: flex-end; }
+}
+
+@keyframes dashFadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

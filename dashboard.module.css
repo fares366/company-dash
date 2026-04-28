@@ -1,0 +1,90 @@
+.app {
+  --teal:        #00d4b4;
+  --teal-dim:    rgba(0, 212, 180, 0.12);
+  --teal-mid:    rgba(0, 212, 180, 0.32);
+  --amber:       #f59e0b;
+  --purple:      #8b5cf6;
+  --red:         #ef4444;
+  --green:       #10b981;
+
+  --bg:          #0b0f1a;
+  --surface:     #111827;
+  --surface2:    #0d1424;
+  --border:      #1e2d40;
+  --text:        #e6edf6;
+  --text-dim:    #8a9bb1;
+  --muted:       #5c6f86;
+  --badge-bg:    #1a2436;
+
+  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md:   0 12px 36px -8px rgba(0, 0, 0, 0.45);
+  --shadow-teal: 0 0 28px rgba(0, 212, 180, 0.18);
+  --shadow-soft: 0 18px 48px -16px rgba(0, 0, 0, 0.55);
+
+  --transition:      0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Syne', 'Inter', sans-serif;
+  --font-ui:      'Manrope', 'Inter', sans-serif;
+
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background var(--transition), color var(--transition);
+}
+
+@media (min-width: 1280px) {
+  .app { font-size: 15px; }
+}
+@media (max-width: 480px) {
+  .app { font-size: 13px; }
+}
+
+.app[data-theme='light'] {
+  --bg:          #f1f5f9;
+  --surface:     #ffffff;
+  --surface2:    #f8fafc;
+  --border:      #e2e8f0;
+  --text:        #0f172a;
+  --text-dim:    #475569;
+  --muted:       #94a3b8;
+  --badge-bg:    #f1f5f9;
+  --shadow-sm:   0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md:   0 12px 36px -8px rgba(15, 23, 42, 0.12);
+  --shadow-teal: 0 0 28px rgba(0, 168, 150, 0.18);
+  --shadow-soft: 0 18px 48px -16px rgba(15, 23, 42, 0.18);
+  --teal:        #00a896;
+  --teal-dim:    rgba(0, 168, 150, 0.10);
+  --teal-mid:    rgba(0, 168, 150, 0.28);
+}
+
+.main {
+  flex: 1;
+  margin-left: 224px;
+  min-height: 100vh;
+  background: var(--bg);
+  transition: margin var(--transition), background var(--transition);
+}
+
+@media (max-width: 1024px) {
+  .main { margin-left: 0; padding-top: 72px; }
+}
+
+.app button,
+.app input,
+.app textarea,
+.app select { font-family: inherit; }
+
+.app ::-webkit-scrollbar         { width: 6px; height: 6px; }
+.app ::-webkit-scrollbar-track   { background: transparent; }
+.app ::-webkit-scrollbar-thumb   { background: var(--border); border-radius: 4px; }
+.app ::-webkit-scrollbar-thumb:hover { background: var(--muted); }

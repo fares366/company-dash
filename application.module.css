@@ -1,0 +1,72 @@
+.statGrid { 
+/*zid*/
+display: grid;
+  /* تقسيم تلقائي: سينشئ أعمدة بعرض 140px على الأقل وتتوزع لتملأ المساحة */
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+
+
+}
+
+.statCard {
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition);
+  /*zid*/
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition);
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.statCard:hover {
+  border-color: var(--teal-mid);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-teal);
+}
+.statCardActive {
+  box-shadow: 0 0 0 1px var(--teal), var(--shadow-teal);
+  background: var(--surface2);
+}
+@media (max-width: 480px) {
+  .statGrid {
+    /* في الهواتف الصغيرة جداً، نجعلها كارتين في كل سطر أو كارت واحد واسع */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+
+  }
+  .statCard {
+    padding: 25px;
+  }
+  
+  .statValue {
+    font-size: 24px; /* تصغير الخط قليلاً ليناسب المساحة */
+  }
+  
+  .statLabel {
+    font-size: 11px;
+  }
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+.statLabel {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-dim);
+  font-weight: 600;
+}
